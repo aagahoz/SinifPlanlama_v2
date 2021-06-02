@@ -70,11 +70,11 @@ void Asistan::asistanDuzenle()
 			this->isim = yeni_ad;
 			break;
 		case 2:
-		    cout << "Asistan soyismi duzenleme secildi" << endl;
-			cout << "Yeni soyisim bilgisi giriniz > " << endl;
-		    cin >> yeni_soyisim;
-		    this->soyisim = yeni_soyisim;
-		    break;    
+		       cout << "Asistan soyismi duzenleme secildi" << endl;
+		       cout << "Yeni soyisim bilgisi giriniz > " << endl;
+		       cin >> yeni_soyisim;
+		       this->soyisim = yeni_soyisim;
+		       break;    
 		case 3:
 			cout << "Asistan maili düzenleme secildi" << endl;
 			cout << "Yeni mail bilgisini giriniz > " << endl;
