@@ -1,0 +1,7 @@
+Derslik-1 B-Blok 90
+Derslik-2 A-Blok 120
+Derslik-3 C-Blok 150
+Derslik-4 A-Blok 45
+Derslik-5 B-Blok 120
+Derslik-6 B-Blok 80
+Derslik-7 C-Blok 90
