@@ -11,8 +11,7 @@ class Ogrenci
 		string harfNotu;
 		int durum;
 		int numara;
-		int notSayisi;
-		int *notlar;
+		bool isDolu;
 		
 	public:
 		Ogrenci();
@@ -21,27 +20,23 @@ class Ogrenci
 		Ogrenci& operator=(const Ogrenci& ogr);
 		//~Ogrenci();
 		
-		void OgrOlustur(string isim, string soyisim, string harfNotu, int durum, int numara, int notSayisi);
-		//void OgrDuzenle();
+		void ogrenciOlustur(int numara, string isim, string soyisim, int durum, string harfNotu);
+		void ogrenciDuzenle();
 		
-		//int HarfnotuHesapla();
-		//string harfnotuCevirici();
+
 		friend ostream& operator << (ostream& out, Ogrenci& obje);
 	   	
-	   	/*
+	   	void setNumara(int numara);
 		void setIsim(string isim);
 	   	void setSoyisim(string soyisim);
-	   	void setHarfnotu(int harfnotu);
+	   	void setHarfnotu(string harfnotu);
 	   	void setDurum(int durum);
-	   	void setNumara(int numara);
-	   	void setNotsayisi(int notSayisi);
+	   	int getNumara();
 		string getIsim();
 	   	string getSoyisim();
-	   	int getHarfnotu(int harfnotu);
-	   	int getDurum(int durum);
-	   	int getNumara(int numara);
-	   	int getNotsayisi(int notSayisi);
-	   	*/
+	   	string getHarfnotu();
+	   	int getDurum();
+	   	bool getIsDolu();
 };
 ostream& operator << (ostream& out, Ogrenci& obje);
 #endif
