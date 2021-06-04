@@ -2,7 +2,7 @@
 #define asistan_h_
 
 #include <iostream>
-
+#include "ogrenci.h"
 using namespace std;
 
 class Asistan
@@ -12,8 +12,11 @@ class Asistan
 		string soyisim;
 		string mail;
 		int kapasite;
+		bool isDolu;
 		
 	public:
+		Ogrenci ogrenciListesi[100];
+		
 		Asistan();
 		Asistan(string isim, string soyisim, string mail, int kapasite);
 		Asistan(const Asistan& obje);
@@ -32,7 +35,8 @@ class Asistan
 		string getSoyisim();
 		string getMail();
 		int getKapasite();
-
+		bool getIsDolu();
+		
 };
 ostream& operator << (ostream& out, Asistan& obje);
 #endif
