@@ -6,7 +6,8 @@ Asistan::Asistan()
 	isim = "bilinmiyor";
 	soyisim = "bilinmiyor";
 	mail = "bilinmiyor";
-	kapasite = 0;	
+	kapasite = 0;
+	isDolu = 0;
 }
 Asistan::Asistan(string isim, string soyisim, string mail, int kapasite)
 {
@@ -14,6 +15,7 @@ Asistan::Asistan(string isim, string soyisim, string mail, int kapasite)
 	this->soyisim = soyisim;
 	this->mail = mail;
 	this->kapasite = kapasite;
+	this->isDolu = 1;
 }
 Asistan::Asistan(const Asistan& obje)
 {
@@ -21,6 +23,7 @@ Asistan::Asistan(const Asistan& obje)
 	this->soyisim = obje.soyisim;
 	this->mail = obje.mail;
 	this->kapasite = obje.kapasite;
+	this->isDolu = 1;
 }
 Asistan& Asistan::operator = (const Asistan& obje)
 {
@@ -32,10 +35,10 @@ Asistan& Asistan::operator = (const Asistan& obje)
 }
 ostream& operator << (ostream& out, Asistan& obje)
 {
-	 out << "Asistan ismi >			"<< obje.isim << endl;
-	 out << "Asistan soyismi > 		"<< obje.soyisim << endl;
-	 out << "Asistan maili > 			"<< obje.mail << endl;
-	 out << "Asistan max kapesite > 	"<< obje.kapasite << endl;
+	 out << "Asistan ismi >		" << obje.isim << endl;
+	 out << "Asistan soyismi >	" << obje.soyisim << endl;
+	 out << "Asistan maili >		" << obje.mail << endl;
+	 out << "Asistan max kapasite >	" << obje.kapasite << endl << endl;
 	 return out;
 }
 void Asistan::asistanOlustur(string isim, string soyisim, string mail, int kapasite)
@@ -44,6 +47,7 @@ void Asistan::asistanOlustur(string isim, string soyisim, string mail, int kapas
 	this->soyisim = soyisim;
 	this->mail = mail;
 	this->kapasite = kapasite;
+	this->isDolu = 1;
 }
 
 
@@ -70,11 +74,11 @@ void Asistan::asistanDuzenle()
 			this->isim = yeni_ad;
 			break;
 		case 2:
-		       cout << "Asistan soyismi duzenleme secildi" << endl;
-		       cout << "Yeni soyisim bilgisi giriniz > " << endl;
-		       cin >> yeni_soyisim;
-		       this->soyisim = yeni_soyisim;
-		       break;    
+		    cout << "Asistan soyismi duzenleme secildi" << endl;
+			cout << "Yeni soyisim bilgisi giriniz > " << endl;
+		    cin >> yeni_soyisim;
+		    this->soyisim = yeni_soyisim;
+		    break;    
 		case 3:
 			cout << "Asistan maili düzenleme secildi" << endl;
 			cout << "Yeni mail bilgisini giriniz > " << endl;
@@ -100,3 +104,4 @@ int Asistan::getKapasite()					{	return kapasite;			}
 string Asistan::getSoyisim()				{	return soyisim;				}
 string Asistan::getIsim()					{	return isim;				}
 string Asistan::getMail()					{	return mail;				}
+bool Asistan::getIsDolu()					{	return isDolu;				}
