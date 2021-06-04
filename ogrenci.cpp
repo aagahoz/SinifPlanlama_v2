@@ -7,8 +7,7 @@ Ogrenci::Ogrenci()
 		harfNotu = "null";
 		durum = 0;
 		numara = 0;
-		notSayisi = 0;
-		notlar = NULL;
+		isDolu = false;
 }
 Ogrenci::Ogrenci(string isim, string soyisim, string harfNotu, int durum, int numara, int notSayisi)
 {
@@ -17,8 +16,7 @@ Ogrenci::Ogrenci(string isim, string soyisim, string harfNotu, int durum, int nu
 	this->harfNotu = harfNotu;
 	this->durum = durum;
 	this->numara = numara;
-	this->notSayisi = notSayisi;
-	this->notlar = notlar;
+	this->isDolu = true;
 }
 Ogrenci::Ogrenci(const Ogrenci& ogr)
 {
@@ -27,8 +25,7 @@ Ogrenci::Ogrenci(const Ogrenci& ogr)
 	this->harfNotu = ogr.harfNotu;
 	this->durum = ogr.durum;
 	this->numara = ogr.numara;
-	this->notSayisi = ogr.notSayisi;
-	this->notlar = ogr.notlar;
+	this->isDolu = true;
 }
 Ogrenci& Ogrenci::operator=(const Ogrenci& ogr)
 {
@@ -37,45 +34,48 @@ Ogrenci& Ogrenci::operator=(const Ogrenci& ogr)
 	this->harfNotu = ogr.harfNotu;
 	this->durum = ogr.durum;
 	this->numara = ogr.numara;
-	this->notSayisi = ogr.notSayisi;
-	this->notlar = ogr.notlar;
+	this->isDolu = true;
 	return *this;
 }
 //~Ogrenci();
-		
-void Ogrenci::OgrOlustur(string isim, string soyisim, string harfNotu, int durum, int numara, int notSayisi)
+	
+	
+void Ogrenci::ogrenciOlustur(int numara, string isim, string soyisim, int durum, string harfNotu)
 {
 	this->isim = isim;
 	this->soyisim = soyisim;
 	this->harfNotu = harfNotu;
 	this->durum = durum;
 	this->numara = numara;
-	this->notSayisi = notSayisi;
-	this->notlar = notlar;
+	this->isDolu = true;
 }
-//Ogrenci& OgrDuzenle();
+void Ogrenci::ogrenciDuzenle()
+{
+	
+}
 		
-//int HarfnotuHesapla();
-//string harfnotuCevirici();
 ostream& operator << (ostream& out, Ogrenci& obje)
 {
+	out << "Numara >	" << obje.numara << endl;
 	out << "Isim >		" << obje.isim << endl;
 	out << "Soyisim >	" << obje.soyisim << endl;
-	out << "Numara >	" << obje.numara << endl;
 	out << "Durum >		" << obje.durum << endl;
-	out << "Harf Notu >	" << obje.harfNotu << endl;
+	out << "Harf Notu >	" << obje.harfNotu << endl << endl;
 	return out;
 }
 
-//void setIsim(string isim);
-//void setSoyisim(string soyisim);
-//void setHarfnotu(int harfnotu);
-//void setDurum(int durum);
-//void setNumara(int numara);
-//void setNotsayisi(int notSayisi);
-//string getIsim();
-//string getSoyisim();
-//int getHarfnotu(int harfnotu);
-//int getDurum(int durum);
-//int getNumara(int numara);
-//int getNotsayisi(int notSayisi);
+
+void Ogrenci::setNumara(int numara)					{	this->numara = numara;		}
+void Ogrenci::setIsim(string isim)					{	this->isim = isim;			}
+void Ogrenci::setSoyisim(string soyisim)			{	this->soyisim = soyisim;	}	
+void Ogrenci::setDurum(int durum)					{	this->durum = durum;		}
+void Ogrenci::setHarfnotu(string harfNotu)			{	this->harfNotu = harfNotu;	}
+
+int Ogrenci::getNumara()			{	return numara;		}
+string Ogrenci::getIsim()			{	return isim;		}
+string Ogrenci::getSoyisim()		{	return soyisim;		}
+int Ogrenci::getDurum()				{	return durum;		}
+string Ogrenci::getHarfnotu()		{	return harfNotu;	}
+bool Ogrenci::getIsDolu()			{	return isDolu;		}
+
+
