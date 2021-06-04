@@ -1,6 +1,8 @@
 #ifndef sinif_h_
 #define sinif_h_
+
 #include <iostream>
+#include "ogrenci.h">
 using namespace std;
 
 class Sinif
@@ -9,8 +11,11 @@ class Sinif
 		string sinifAdi;
 		string sinifYeri;
 		int kapasite;
+		bool isDolu;
 		
 	public:
+		Ogrenci ogrenciListesi[100];
+		
 		Sinif();
 		Sinif(string sinifAdi, string sinifYeri, int kapasite);
 		Sinif(const Sinif& obje);
@@ -28,6 +33,7 @@ class Sinif
 		string getSinifAdi();
 		string getSinifYeri();
 		int getKapasite();
+		bool getIsDolu();
 };
 
 ostream& operator << (ostream& out, Sinif& obje);
