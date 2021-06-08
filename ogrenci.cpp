@@ -9,6 +9,7 @@ Ogrenci::Ogrenci()
 		numara = 0;
 		isDolu = false;
 }
+
 Ogrenci::Ogrenci(string isim, string soyisim, string harfNotu, int durum, int numara, int notSayisi)
 {
 	this->isim = isim;
@@ -18,6 +19,7 @@ Ogrenci::Ogrenci(string isim, string soyisim, string harfNotu, int durum, int nu
 	this->numara = numara;
 	this->isDolu = true;
 }
+
 Ogrenci::Ogrenci(const Ogrenci& ogr)
 {
 	this->isim = ogr.isim;
@@ -27,6 +29,7 @@ Ogrenci::Ogrenci(const Ogrenci& ogr)
 	this->numara = ogr.numara;
 	this->isDolu = true;
 }
+
 Ogrenci& Ogrenci::operator=(const Ogrenci& ogr)
 {
 	this->isim = ogr.isim;
@@ -37,8 +40,8 @@ Ogrenci& Ogrenci::operator=(const Ogrenci& ogr)
 	this->isDolu = true;
 	return *this;
 }
-//~Ogrenci();
-	
+
+Ogrenci::~Ogrenci()	{}
 	
 void Ogrenci::ogrenciOlustur(int numara, string isim, string soyisim, int durum, string harfNotu)
 {
@@ -49,21 +52,22 @@ void Ogrenci::ogrenciOlustur(int numara, string isim, string soyisim, int durum,
 	this->numara = numara;
 	this->isDolu = true;
 }
-void Ogrenci::ogrenciDuzenle()
+
+void Ogrenci::objeBosalt()
 {
-	
-}
-		
-ostream& operator << (ostream& out, Ogrenci& obje)
-{
-	out << "Numara >	" << obje.numara << endl;
-	out << "Isim >		" << obje.isim << endl;
-	out << "Soyisim >	" << obje.soyisim << endl;
-	out << "Durum >		" << obje.durum << endl;
-	out << "Harf Notu >	" << obje.harfNotu << endl << endl;
-	return out;
+		isim = "null";
+		soyisim = "null";
+		harfNotu = "null";
+		durum = 0;
+		numara = 0;
+		isDolu = false;
 }
 
+ostream& operator << (ostream& out, Ogrenci& obje)
+{
+	out <<" > " << obje.numara <<  "  " << obje.isim << "  " << obje.soyisim << "  " << obje.durum << "  " << obje.harfNotu;
+	return out;
+}
 
 void Ogrenci::setNumara(int numara)					{	this->numara = numara;		}
 void Ogrenci::setIsim(string isim)					{	this->isim = isim;			}
@@ -77,5 +81,3 @@ string Ogrenci::getSoyisim()		{	return soyisim;		}
 int Ogrenci::getDurum()				{	return durum;		}
 string Ogrenci::getHarfnotu()		{	return harfNotu;	}
 bool Ogrenci::getIsDolu()			{	return isDolu;		}
-
-

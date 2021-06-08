@@ -2,7 +2,7 @@
 #define sinif_h_
 
 #include <iostream>
-#include "ogrenci.h">
+#include "ogrenci.h"
 using namespace std;
 
 class Sinif
@@ -20,9 +20,9 @@ class Sinif
 		Sinif(string sinifAdi, string sinifYeri, int kapasite);
 		Sinif(const Sinif& obje);
 		Sinif& operator = (const Sinif& obje);
+		~Sinif();
 		
 		void sinifOlustur(string sinifAdi, string sinifYeri, int kapasite);
-		void sinifDuzenle();
 		
 		friend ostream& operator << (ostream& out, Sinif& obje);
 	    
@@ -35,6 +35,5 @@ class Sinif
 		int getKapasite();
 		bool getIsDolu();
 };
-
 ostream& operator << (ostream& out, Sinif& obje);
 #endif

@@ -18,11 +18,10 @@ class Ogrenci
 		Ogrenci(string isim, string soyisim, string harfNotu, int durum, int numara, int notSayisi);
 		Ogrenci(const Ogrenci& ogr);
 		Ogrenci& operator=(const Ogrenci& ogr);
-		//~Ogrenci();
+		~Ogrenci();
 		
 		void ogrenciOlustur(int numara, string isim, string soyisim, int durum, string harfNotu);
-		void ogrenciDuzenle();
-		
+		void objeBosalt();
 
 		friend ostream& operator << (ostream& out, Ogrenci& obje);
 	   	

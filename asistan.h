@@ -21,11 +21,11 @@ class Asistan
 		Asistan(string isim, string soyisim, string mail, int kapasite);
 		Asistan(const Asistan& obje);
 		Asistan& operator = (const Asistan& obje);
+		~Asistan();
 		
 		friend ostream& operator << (ostream& out, Asistan& obje);
 		
 		void asistanOlustur(string isim, string soyisim, string mail, int kapasite);
-		void asistanDuzenle();
 		
 		void setIsim(string isim);
 		void setSoyisim(string soyisim);

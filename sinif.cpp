@@ -8,6 +8,7 @@ Sinif::Sinif()
 	this->kapasite = 0;
 	this->isDolu = false;
 }
+
 Sinif::Sinif(string sinifAdi, string sinifYeri, int kapasite)
 {
 	this->sinifAdi = sinifAdi;
@@ -15,6 +16,7 @@ Sinif::Sinif(string sinifAdi, string sinifYeri, int kapasite)
 	this->kapasite = kapasite;
 	this->isDolu = true;
 }
+
 Sinif::Sinif(const Sinif& obje)
 {
 	this->sinifAdi = obje.sinifAdi;
@@ -22,6 +24,7 @@ Sinif::Sinif(const Sinif& obje)
 	this->kapasite = obje.kapasite;
 	this->isDolu = true;
 }
+
 Sinif& Sinif::operator = (const Sinif& obje)
 {
 	this->sinifAdi = obje.sinifAdi;
@@ -31,48 +34,14 @@ Sinif& Sinif::operator = (const Sinif& obje)
 	return *this;
 }
 
+Sinif::~Sinif() {}
+
 void Sinif::sinifOlustur(string sinifAdi, string sinifYeri, int kapasite)
 {
 	this->sinifAdi = sinifAdi;
 	this->sinifYeri = sinifYeri;
 	this->kapasite = kapasite;
 	this->isDolu = true;
-}
-void Sinif::sinifDuzenle()
-{
-	string yeni_ad;
-	string yeni_yer;
-	int yeni_kapasite;
-	int secim;
-	cout << "Lutfen duzenlemek istediginiz secenegi giriniz!" << endl;
-	cout << "Sinif adini duzenlemek icin--------1" << endl;
-	cout << "Sinif yerini duzenlemek icin--------2" << endl;
-	cout << "Sinif kapesitesini duzenlemek icin---3" << endl;
-	cout << "Giriniz > ";
-	cin >> secim;
-	switch(secim)
-	{
-		case 1:
-			cout << "Sinif adi duzenleme secildi!" << endl;
-			cout << "Lutfen yeni sinif ismini giriniz > ";
-			cin >> yeni_ad;
-			this->sinifAdi = yeni_ad;
-			break;
-		case 2:
-			cout << "Sinif yeri duzenleme secildi!" << endl;
-			cout << "Lutfen yeni sinif yerini giriniz > ";
-			cin >> yeni_yer;
-			this->sinifYeri = yeni_yer;
-			break;
-		case 3:
-			cout << "Sinif kapesitesi duzenleme secildi!" << endl;
-			cout << "Lutfen yeni sinif kapasitesi giriniz > ";
-			cin >> yeni_kapasite;
-			this->kapasite = yeni_kapasite;
-			break;
-		default:
-			cout << "Hatali secim yaptiniz.Lutfen tekrar deneyiniz!";		
-	}
 }
 
 void Sinif::setSinifAdi(string ad)									{	this->sinifAdi=ad;			}
@@ -85,11 +54,8 @@ bool Sinif::getIsDolu()												{	return isDolu;				}
 
 ostream& operator << (ostream& out, Sinif& s)
 {
-	  out << "Sinif Adi >			" << s.sinifAdi << endl;
-	  out << "Sinif Yeri >			" << s.sinifYeri << endl;
-	  out << "Sinif Kapasitesi >		" << s.kapasite << endl << endl;
+	  out << " > "<< s.sinifAdi << "  ";
+	  out << s.sinifYeri << "  ";
+	  out << s.kapasite;
 	  return out;	
 }
-
-
-
